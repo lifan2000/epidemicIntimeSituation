@@ -1,0 +1,580 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: PingFang SC, Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Heiti SC, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-height: 100%;
+}
+
+#scaleContainer {
+  width: 750px;
+  transform-origin: 0 0;
+  margin: auto;
+}
+
+#scaleContainer>* {
+  width: 100%;
+}
+
+#charts>*,
+#news>*,
+#prevent>*,
+#tail>* {
+  width: 100%;
+}
+
+.head {
+  position: relative;
+  height: 334px;
+  background: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/top_headv3.png);
+
+  .bottom {
+    display: flex;
+    line-height: 26px;
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    left: 40px;
+    bottom: 30px;
+
+    .dataSource {
+      position: relative;
+      padding-right: 34px;
+    }
+
+    .dataSource::before {
+      content: ".";
+      font-size: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 24px;
+      height: 24px;
+      background: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/icon_qs2.png);
+      background-size: cover;
+    }
+  }
+
+  .seconndTip {
+    color: #737373;
+  }
+
+  .jump {
+    width: 168px;
+    height: 52px;
+    background: url(https://mat1.gtimg.com/news/signin/v6/yiqing_more_icon.png);
+    background-size: 100%;
+    position: absolute;
+    right: 0px;
+    top: 38px;
+  }
+
+  .jumpTrack {
+    width: 168px;
+    height: 52px;
+    background: url(https://mat1.gtimg.com/news/signin/v6/yiqing_zhuizong_more.png);
+    background-size: 100%;
+    position: absolute;
+    right: 180px;
+    top: 38px;
+  }
+}
+
+.timeNum {
+  padding: 29px 40px 29px 40px;
+  width: 750px;
+  line-height: 26px;
+  font-size: 24px;
+  color: #222222;
+
+  .bottom {
+    color: #737373;
+    font-size: 24px;
+    margin-top: 8px;
+  }
+
+  .d {
+    padding-right: 12px;
+    margin-right: 12px;
+
+    span {
+      font-weight: 500;
+      color: #222222;
+    }
+
+    em {
+      font-style: normal;
+    }
+  }
+}
+
+.recentNumber {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 30px;
+
+  .add {
+    padding-top: 12px;
+    color: #7c7c7c;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .icbar {
+    width: 218px;
+    margin: 0 4px 4px 0;
+    padding: 4px 0 8px;
+    position: relative;
+    text-align: center;
+
+    .text {
+      font-size: 24px;
+      height: 54px;
+      line-height: 54px;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .number {
+      font-size: 44px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      padding-top: 12px;
+    }
+  }
+
+  .icbar:first-child {
+    border-radius: 8px 0 0 0;
+  }
+
+  .icbar:nth-child(2) {
+    border-radius: 0 8px 0 0;
+  }
+
+  .icbar:nth-child(3) {
+    border-radius: 0 0 0 8px;
+  }
+
+
+  .icbar:last-child {
+    border-radius: 0 0 8px 0;
+  }
+
+  .confirm {
+    background-color: #fdf1f1;
+
+    .number {
+      color: #cd2625;
+    }
+
+    span {
+      color: #cd2625;
+    }
+  }
+
+  .heal {
+    background-color: #f1f8f4;
+
+    .number {
+      color: #178b50;
+    }
+
+    span {
+      color: #178b50;
+    }
+  }
+
+  .heal {
+    background-color: #f1f8f4;
+
+    .number {
+      color: #178b50;
+    }
+
+    span {
+      color: #178b50;
+    }
+  }
+
+  .dead {
+    background-color: #f8f8f8;
+
+    .number {
+      color: #66666c;
+    }
+
+    span {
+      color: #66666c;
+    }
+  }
+
+  .nowConfirm {
+    background-color: #fdf2f1;
+
+    .number {
+      color: #f23a3b;
+    }
+
+    span {
+      color: #f23a3b;
+    }
+  }
+
+  .suspect {
+    background-color: #fff5e9;
+
+    .number {
+      color: #f80;
+    }
+
+    span {
+      color: #f80;
+    }
+  }
+
+  .nowSevere {
+    background-color: #faf2f6;
+
+    .number {
+      color: #ca3f81;
+    }
+
+    span {
+      color: #ca3f81;
+    }
+  }
+
+
+}
+
+#charts {
+  .quickEnter {
+    width: auto;
+    text-align: center;
+    margin: 0 40px 10px 40px;
+    background-color: #eef4ff;
+    border-radius: 12px;
+    display: flex;
+  }
+}
+
+.quickEnter {
+  width: auto;
+  text-align: center;
+  margin: 0 40px 10px 40px;
+  background-color: #eef4ff;
+  border-radius: 12px;
+  display: flex;
+
+  >a {
+    width: 33.3%;
+    height: 84px;
+    line-height: 84px;
+    text-decoration: none;
+    font-size: 28px;
+    color: #222;
+    font-weight: 300;
+    position: relative;
+  }
+
+  >a::before {
+    content: ".";
+    display: block;
+    font-size: 0;
+    position: absolute;
+    line-height: 0;
+    width: 2px;
+    height: 36px;
+    background-color: #d8e6ff;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 0 0 56px;
+    position: relative;
+  }
+
+  span::before {
+    content: ".";
+    font-size: 0;
+    position: absolute;
+    display: block;
+    line-height: 0;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-size: 100% 100%;
+    width: 44px;
+    height: 44px;
+  }
+
+  .iconTrain::before {
+    background-image: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/icon_train.png);
+  }
+
+  .iconAnalyse::before {
+    background-image: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/icon_rili.png);
+  }
+
+  .iconTrack::before {
+    background-image: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/icon_guiji.png);
+  }
+}
+
+.navTaps {
+  position: relative;
+  height: 96px;
+  padding: 0 20px;
+  display: flex;
+  background: #fff;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.navTab {
+  width: 165px;
+  line-height: 98px;
+  font-size: 28px;
+  padding: 0 20px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #222222;
+    font-weight: normal;
+  }
+}
+
+.active {
+  position: relative;
+
+  a {
+    color: #005dff;
+    font-weight: bold;
+  }
+}
+
+.active::before {
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  width: 36px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: #005dff;
+  bottom: 4px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+}
+
+.chmap {
+  position: relative;
+  min-height: 670px;
+  left: 2.6%;
+}
+
+#chmap {
+  width: 750px;
+  height: 700px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.chinamapLegend1 {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 12px;
+
+  .item {
+    height: 32px;
+    position: relative;
+
+    p {
+      position: absolute;
+      line-height: 32px;
+      white-space: nowrap;
+      font-size: 20px;
+      left: 24px;
+      top: 50%;
+      transform: translate(0, -50%);
+      color: #737373;
+      font-weight: 400;
+    }
+  }
+
+  .item6 {
+    background-color: #9c0a0d;
+  }
+
+  .item5 {
+    background-color: #c91014;
+  }
+
+  .item4 {
+    background-color: #e64b47;
+  }
+
+  .item3 {
+    background-color: #fe8664;
+  }
+
+  .item2 {
+    background-color: #ffd2a0;
+  }
+
+  .item1 {
+    background-color: #ffefd7;
+  }
+
+  .item0 {
+    background-color: #e2ebf4;
+  }
+}
+
+.chinamapbtns {
+  position: absolute;
+  left: 5.333vw;
+  top: 0;
+  float: left;
+  z-index: 2;
+  height: 6.933vw;
+  .current{
+    background-color: #eef4ff;
+    border-color: #ccdeff;
+    color: #005dff;
+    z-index: 2;
+}
+  span {
+    display: block;
+    width: 120px;
+    line-height: normal;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 0;
+    border: 1px solid #efefef;
+    float: left;
+    position: relative;
+    margin: 0 -1px;
+  }
+
+  span:first-child {
+    border-radius: 1.6vw 0 0 1.6vw;
+  }
+
+  span:last-child {
+    border-radius: 0 1.6vw 1.6vw 0;
+  }
+}
+
+
+.pop_ds {
+  display: none;
+  position: fixed;
+  width: 600px;
+  left: 50%;
+  top: 50%;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px 40px 30px;
+  font-size: 24px;
+  line-height: 40px;
+  z-index: 12;
+  transform-origin: 0 0;
+
+  .icon_close {
+    width: 60px;
+    height: 60px;
+    background: url(https://mat1.gtimg.com/news/zhishiguan/page/icon_pop_close.png);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -92px;
+    right: 0;
+  }
+
+  .h1 {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 500;
+    color: #005dff;
+  }
+
+  .h2 {
+    font-weight: 400;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  .content {
+    position: absolute;
+    top: 104px;
+    bottom: 48px;
+    left: 48px;
+    right: 48px;
+    overflow-x: hidden;
+  }
+
+  em {
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.ds_mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75)
+}
+
+.carousel {
+  margin: 40px 0px;
+}
+
+.dataTips {
+  color: #737373;
+  font-size: 24px;
+  margin: 40px 0 0 40px;
+  position: relative;
+
+  span {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  span::before {
+    content: ".";
+    font-size: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 24px;
+    height: 24px;
+    background: url(https://mat1.gtimg.com/news/images/inews/2020/feiyan/18/img/icon_qs.png);
+    background-size: cover;
+  }
+}

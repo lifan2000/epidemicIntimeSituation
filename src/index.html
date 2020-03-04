@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    name="viewport">
+  <title>新冠肺炎最新动态</title>
+</head>
+
+<body>
+  <div id="scaleContainer">
+    <div id='charts'>
+      <div class="head">
+        <p class="logo"></p>
+        <p class="title"></p>
+        <div class="jump"></div>
+        <div class="jumpTrack"></div>
+        <div class="bottom">
+          <p class="dataSource">数据来源：国家及各地卫健委每日信息发布</p>
+        </div>
+      </div>
+      <div class="topdataWrap">
+        <div class="timeNum">
+          <div class="bottom">
+            <p class="d">
+              统计截止
+              <span></span>
+              <em>更新于<span></span>
+              </em>
+            </p>
+          </div>
+        </div>
+        <div class="recentNumber">
+          <div class="icbar confirm">
+            <div class="add">较上日<span></span>
+            </div>
+            <div class="number"></div>
+            <div class="text">累计确诊</div>
+          </div>
+          <div class="icbar heal">
+            <div class="add">
+              较上日<span></span></div>
+            <div class="number"></div>
+            <div class="text">累计治愈</div>
+          </div>
+          <div class="icbar dead">
+            <div class="add">
+              较上日<span></span></div>
+            <div class="number"></div>
+            <div class="text">累计死亡</div>
+          </div>
+          <div class="icbar nowConfirm">
+            <div class="add">
+              较上日<span></span></div>
+            <div class="number"></div>
+            <div class="text">现有确诊</div>
+          </div>
+          <div class="icbar suspect">
+            <div class="add">较上日<span></span>
+            </div>
+            <div class="number"></div>
+            <div class="text">现有疑似</div>
+          </div>
+          <div class="icbar nowSevere">
+            <div class="add">
+              较上日<span></span></div>
+            <div class="number"></div>
+            <div class="text">现有重症</div>
+          </div>
+        </div>
+      </div>
+      <div class="quickEnter">
+        <a href="https://news.qq.com/hdh5/fycalendar.htm">
+          <span class="iconAnalyse">战疫分析</span>
+        </a>
+        <a href="https://xw.qq.com/act/fytrace?pgv_ref=txxwapp&amp;ADTAG=txxwapp" id="kan-dian">
+          <span class="iconTrack">病患轨迹</span>
+        </a>
+        <a href="https://rl.inews.qq.com/h5/trip?from=newsapp">
+          <span class="iconTrain">同程查询</span>
+        </a>
+      </div>
+      <div class="navTaps" id="staticNav">
+        <div class="navTab chartsTab active" data-id="charts">
+          <a href="#charts">疫情地图</a>
+        </div>
+        <div class="navTab newsTab" data-id="news">
+          <a href="#news">最新进展</a>
+        </div>
+        <div class="navTab rumorTab" data-id="rumor">
+          <a href="#rumor">辟谣信息</a>
+        </div>
+        <div class="navTab preventTab" data-id="prevent">
+          <a href="#prevent">医疗预防</a>
+        </div>
+      </div>
+      <div class="places">
+        <div class="chinaMapWrapper">
+          <div class="chmap">
+            <div id="chmap"></div>
+            <div class="chinamapLegend1">
+              <div class="item item6">
+                <p>10000人及以上</p>
+              </div>
+              <div class="item item5">
+                <p>1000-9999人</p>
+              </div>
+              <div class="item item4">
+                <p>500-999人</p>
+              </div>
+              <div class="item item3">
+                <p>100-499人</p>
+              </div>
+              <div class="item item2">
+                <p>10-99人</p>
+              </div>
+              <div class="item item1">
+                <p>1-9人</p>
+              </div>
+              <div class="item item0">
+                <p>0人</p>
+              </div>
+            </div>
+            <div class="chinamapbtns"><span>现有确诊</span><span class="current">累计确诊</span></div>
+          </div>
+        </div>
+        <div class="carousel">
+          <div id="carousel-one-slider">
+            <div class="slider-left"></div>
+            <div class="slider-right"></div>
+            <div class="brokenLine-wrapper-one">
+              <div class="brokenLine-wrapper-one-img slider-one"></div>
+              <div class="brokenLine-wrapper-one-img slider-two"></div>
+              <div class="brokenLine-wrapper-one-img slider-three"></div>
+              <div class="brokenLine-wrapper-one-img slider-four"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel">
+          <div id="carousel-two-slider">
+            <div class="slider-left"></div>
+            <div class="slider-right"></div>
+            <div class="brokenLine-wrapper-two">
+              <div class="brokenLine-wrapper-two-img slider-one"></div>
+              <div class="brokenLine-wrapper-two-img slider-two"></div>
+              <div class="brokenLine-wrapper-two-img slider-three"></div>
+              <div class="brokenLine-wrapper-two-img slider-four"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dataSource dataTips"><span>数据来源：国家卫健委官网发布，每日更新一次</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="ds_mask"></p>
+  <div class="pop_ds" style="transform: translate(-50%,-50%)">
+    <div class="icon_close"></div>
+    <div class="h1">数据说明</div>
+    <div class="content">
+      <p class="h2"><span class="bold">数据来源：</span>全部数据来源于国家卫健委、各省市区卫健委、各省市区政府以及港澳台官方渠道。</p>
+      <p class="h2"><span class="bold">实时数据方面，腾讯新闻的统计方法如下：</span></p>
+      <p><em>1.</em> 国家卫健委公布数据时，全国总数与国家卫健委保持一致。<br>
+        <em>2.</em> 各省卫健委陆续公布数据，如果各省数据总和已经超过之前国家卫健委总数，则直接使用各省数据总和作为全国总数。（计算时，各省的“现有确诊”用“现有确诊人数 = 累计确诊人数 - 累计治愈人数 -
+        累计死亡人数”计算得到，“现有疑似”仅使用国家卫健委每天公布的现有疑似病例总数，而不做新增累计）<br>
+        <em>3.</em> “现有确诊”、“累计确诊”、“现有重症”、“治愈”和“死亡”的“较上日”是指每两天间的新增数值，由当前的全国总数减去国家卫健委前一天公布的数据得到。这个值会随着全国总数的变动而实时变化。<br>
+        <em>4.</em> “现有疑似”的“较上日”数据取自国家卫健委每日最新公布的“新增疑似病例数”。<br>
+        <em>5.</em> 各省卫健委公布数据的发布时间和统计时间段各不相同，故而会在部分时段出现国家总数不等于分省数据之和。</p>
+      <p class="h2"><span class="bold">疫情趋势图：</span></p>
+      <p>1. 与实时更新的当前确诊/治愈/死亡数据不同，疫情新增趋势、现有确诊/累计确诊/疑似/重症/治愈/死亡趋势图只使用国家和各省市区卫健委的数据，每天更新一次。</p>
+      <p>2. 治愈率 = 截至当日累计治愈人数 / 截至当日累计确诊人数。</p>
+      <p>3. 病死率 = 截至当日累计死亡人数 / 截至当日累计确诊人数。</p>
+      <p>如果大家发现相关数据错误，欢迎即时联系我们。反馈入口：进入微信搜索“腾讯新闻App”微信公众号，直接留言反馈即可。</p>
+      <br><br>
+    </div>
+  </div>
+</body>
+
+</html>
