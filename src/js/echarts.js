@@ -124,4 +124,3 @@ $.ajax({
     }
   },
 });
-console.log('hi');
