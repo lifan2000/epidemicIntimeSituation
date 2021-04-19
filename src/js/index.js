@@ -1,3 +1,3 @@
-import '../scss/index.scss';
-import './front.js';
-import './echarts.js';
+import "../scss/index.scss";
+import "./echarts.js";
+import "./front.js";

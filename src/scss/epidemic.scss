@@ -122,7 +122,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 30px;
+  padding: 30px 0;
 
   .add {
     padding-top: 12px;
@@ -244,7 +244,7 @@ body {
     }
   }
 
-  .nowSevere {
+  .highDanger {
     background-color: #faf2f6;
 
     .number {
@@ -457,12 +457,14 @@ body {
   float: left;
   z-index: 2;
   height: 6.933vw;
-  .current{
+
+  .current {
     background-color: #eef4ff;
     border-color: #ccdeff;
     color: #005dff;
     z-index: 2;
-}
+  }
+
   span {
     display: block;
     width: 120px;
