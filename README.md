@@ -12,16 +12,18 @@
 对接口感兴趣的同学可以前往：https://lab.isaaclin.cn/nCoV/zh
 了解接口项目和原作者
 
-#### 开箱方法
+## 开箱方法
 在新建的文件夹下使用：
 
-`git clone https://github.com/lifan2000/epidemicIntimeSituation/security/dependabot
+```
+$ git clone https://github.com/lifan2000/epidemicIntimeSituation/security/dependabot
 
-cd epidemicIntimeSituation
+$ cd epidemicIntimeSituation
 
-yarn install（或npm install）
+$ yarn install（或npm install）
 
-npm start`
+$ npm start
+```
 
 三条命令完成后即自行在浏览器启动本地8080端口。
 
